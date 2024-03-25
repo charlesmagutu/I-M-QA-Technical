@@ -37,9 +37,12 @@ export const navigateToHeader = (headerText) => {
   };
   
   export const expandAccordion = (accordionTarget) => {
-    cy.get(`${accordionTarget}`)
-      .click({ multiple: false }) 
-      .parent()
+    cy.xpath(`${accordionTarget}`)
+      .click({ multiple: false, force:true}) 
       .should('have.class', 'btn-block')
   };
   
+  export const checkRadioButtonById = (radioButtonId) =>{
+    cy.xpath(radioButtonId)
+      .click({force:true})
+  };

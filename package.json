@@ -1,0 +1,26 @@
+{
+  "name": "imauto",
+  "version": "1.0.0",
+  "description": "\"The purpose of this technical test is to assess your ability to use automation tools to interact with web elements. You will be using either Cypress or Playwright to automate specific tasks on the i&M Bank Kenya website.\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/charlesmagutu/I-M-QA-Technical.git"
+  },
+  "keywords": [
+    "I&M"
+  ],
+  "author": "charles Ondabu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/charlesmagutu/I-M-QA-Technical/issues"
+  },
+  "homepage": "https://github.com/charlesmagutu/I-M-QA-Technical#readme",
+  "devDependencies": {
+    "cypress": "^13.7.1",
+    "cypress-xpath": "^2.0.1"
+  }
+}

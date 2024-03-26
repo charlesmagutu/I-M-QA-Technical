@@ -24,8 +24,3 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 import 'cypress-xpath';
-
-Cypress.Commands.add('selectDropdownOption', (selector, optionValue) => {
-    cy.get(selector).select(optionValue).invoke('val').should('eq', optionValue);
-  });
-  

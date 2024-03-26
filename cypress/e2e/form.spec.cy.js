@@ -1,6 +1,7 @@
 /// <reference types="cypress" />
+import '../support/custom_cmd';
 
-import { navigateToHeader, checkConsent, scrollToSpecific, checkRadioButtonById} from '../support/utils';
+import { navigateToHeader, inputText, scrollToSpecific, checkRadioButtonById} from '../support/utils';
 
 describe('Form Automation', () => {
   beforeEach(() => {
@@ -12,13 +13,16 @@ describe('Form Automation', () => {
   });
 
   it('should fill out the form contact form', () => {
-    cy.get('#gform_fields_17').within(() => {
-      cy.get('#input_17_2').type('Charles Ondabu');
-      cy.get('#input_17_3').type('charlesmagutu11@gmail.com');
-      cy.get('#input_17_4').type('1234567890');
-      cy.get('#input_17_5').select('Karen Connection').invoke('val').should('eq', 'Karen Connection');
-      checkRadioButtonById("//input[@id='choice_17_6_0']");
-      checkRadioButtonById("//input[@id='input_17_9_1']");
-    });
+    cy.inputTexts([
+      { form: '#gform_fields_17', element: '#input_17_2', text: 'Charles Ondabu' },
+      { form: '#gform_fields_17', element: '#input_17_3', text: 'charlesmagutu11@gmail.com' },
+      { form: '#gform_fields_17', element: '#input_17_4', text: '0708462128' },
+      { form: '#gform_fields_17', element: '#input_17_2', text: 'Charles Ondabu' }
+    ]);
+    cy.selectDropdownOption('#input_17_5', 'Karen Connection');
+  
+    checkRadioButtonById("//input[@id='choice_17_6_0']");
+    checkRadioButtonById("//input[@id='input_17_9_1']");
   });
+
 });

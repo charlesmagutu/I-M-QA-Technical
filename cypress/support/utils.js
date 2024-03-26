@@ -33,7 +33,9 @@ export const navigateToHeader = (headerText) => {
   }
 
   export const clickElement = (elementText) => {
-    cy.contains(elementText).should('be.visible').click({ force: true });
+    cy.contains(elementText)
+      .should('be.visible')
+      .click({ force: true });
   };
   
   export const expandAccordion = (accordionTarget) => {
@@ -46,3 +48,10 @@ export const navigateToHeader = (headerText) => {
     cy.xpath(radioButtonId)
       .click({force:true})
   };
+  
+  export const inputText = (form, element, text) => {
+    cy.get(form).within(() => {
+      cy.get(element).type(text);
+    });
+  };
+  
